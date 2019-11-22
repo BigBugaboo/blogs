@@ -3,18 +3,18 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle: ''
-description: ''
+title: 何俊泽的博客
+subtitle: '何俊泽的一个无聊博客'
+description: '这是个博客'
 keywords:
-author: John Doe
-language: en
+author: hejunze
+language: zh
 timezone: ''
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://github.com/BigBugaboo/blogs.git
-root: /
+url: https://git.dev.tencent.com/dtid_29ce2afdb65786d9/my_blogs.git/my_blogs
+root: /my_blogs
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -90,9 +90,18 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: chic
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type: ''
+  type: git
+  repo: https://git.dev.tencent.com/dtid_29ce2afdb65786d9/my_blogs.git
+  branch: master
+
+# css
+autoprefixer:
+  exclude:
+    - '*.min.css'
+  browsers:
+    - 'last 2 versions'
