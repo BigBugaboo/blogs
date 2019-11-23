@@ -4,17 +4,18 @@
 
 # Site
 title: 何俊泽的博客
-subtitle: '何俊泽的一个无聊博客'
-description: '这是个博客'
+subtitle: 何俊泽无聊的博客
+description: 这是个博客
 keywords:
 author: hejunze
-language: zh
+language: en
 timezone: ''
+
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://git.dev.tencent.com/dtid_29ce2afdb65786d9/my_blogs.git/my_blogs
-root: /my_blogs
+url: http://dtid_29ce2afdb65786d9.coding.me/blogs/
+root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -96,12 +97,12 @@ theme: chic
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://git.dev.tencent.com/dtid_29ce2afdb65786d9/my_blogs.git
+  repo: https://git.dev.tencent.com/dtid_29ce2afdb65786d9/blogs.git
   branch: master
 
-# css
-autoprefixer:
-  exclude:
-    - '*.min.css'
-  browsers:
-    - 'last 2 versions'
+# Generate categories from directory-tree
+# Dependencies: https://github.com/xu-song/hexo-auto-category
+# depth: the max_depth of directory-tree you want to generate, should > 0
+auto_category:
+ enable: true
+ depth: 

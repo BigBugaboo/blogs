@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "build": "hexo generate",
-    "dev": "npm run clean && npm run server",
     "clean": "hexo clean",
+    "dev": "hexo clean && hexo g && hexo s",
     "deploy": "npm run clean && npm run build && hexo deploy",
     "server": "hexo server"
   },
@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "hexo": "^4.0.0",
-    "hexo-autoprefixer": "^2.0.0",
+    "hexo-auto-category": "^0.2.0",
     "hexo-deployer-git": "^2.1.0",
     "hexo-generator-archive": "^1.0.0",
     "hexo-generator-category": "^1.0.0",
