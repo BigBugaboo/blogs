@@ -6,9 +6,10 @@
 title: 何俊泽的博客
 subtitle: 何俊泽无聊的博客
 description: 这是个博客
-keywords:
-author: hejunze
-language: en
+keywords: HTML, JavaScript, Hexo
+tags: Java, Golang, React, Vue
+author: 何俊泽
+language: zh-CN
 timezone: ''
 
 
@@ -16,7 +17,7 @@ timezone: ''
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: https://bigbugaboo.github.io/blog-show/
 root: /blog-show
-permalink: :year/:month/:day/:title/
+permalink: :year/:abbrlink.html
 permalink_defaults:
 pretty_urls:
   trailing_index: true # Set to false to remove trailing index.html from permalinks
@@ -100,9 +101,29 @@ deploy:
   repo: https://github.com/BigBugaboo/blog-show.git
   branch: master
 
-# Generate categories from directory-tree
-# Dependencies: https://github.com/xu-song/hexo-auto-category
-# depth: the max_depth of directory-tree you want to generate, should > 0
-auto_category:
- enable: true
- depth: 
+ # 加快网页加载
+filter_optimize:
+enable: true
+# remove static resource query string
+#   - like `?v=1.0.0`
+remove_query_string: true
+# remove the surrounding comments in each of the bundled files
+remove_comments: false
+css:
+  enable: true
+  # bundle loaded css file into the one
+  bundle: true
+  # use a script block to load css elements dynamically
+  delivery: true
+  # make specific css content inline into the html page
+  #   - only support the full path
+  #   - default is ['css/main.css']
+  inlines:
+  excludes:
+js:
+  # bundle loaded js file into the one
+  bundle: true
+  excludes:
+# set the priority of this plugin,
+# lower means it will be executed first, default is 10
+priority: 12

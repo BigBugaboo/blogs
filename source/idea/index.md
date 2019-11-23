@@ -1,8 +1,10 @@
 ---
-title: idea
+title: 想法共享
 date: 2019-11-23 11:34:25
+excerpt: This is my post excerpt
 ---
-
+代表个人想法，与个人参与的所有公司及团队无关。
+<!-- more -->
 ## 记录想法和分享想法
 - 有什么想法，可和我聊一聊
 - 开源想法
