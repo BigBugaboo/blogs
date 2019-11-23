@@ -14,8 +14,8 @@ timezone: ''
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://dtid_29ce2afdb65786d9.coding.me/blogs/
-root: /
+url: https://bigbugaboo.github.io/blog-show/
+root: /blog-show
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -97,7 +97,7 @@ theme: chic
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://git.dev.tencent.com/dtid_29ce2afdb65786d9/blogs.git
+  repo: https://github.com/BigBugaboo/blog-show.git
   branch: master
 
 # Generate categories from directory-tree
