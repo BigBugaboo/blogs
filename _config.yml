@@ -7,7 +7,7 @@ title: 何俊泽的博客
 subtitle: 何俊泽无聊的博客
 description: 这是个博客
 keywords: HTML, JavaScript, Hexo
-tags: Java, Golang, React, Vue
+tags: Javascript, React, Vue, Html, css
 author: 何俊泽
 language: zh-CN
 timezone: ''
@@ -127,3 +127,10 @@ js:
 # set the priority of this plugin,
 # lower means it will be executed first, default is 10
 priority: 12
+
+# 自动添加前缀
+autoprefixer:
+  exclude:
+    - '*.min.css'
+  browsers:
+    - 'last 2 versions'
