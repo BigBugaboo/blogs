@@ -6,8 +6,9 @@
     "build": "hexo generate",
     "clean": "hexo clean",
     "dev": "hexo clean && hexo g && hexo s",
-    "deploy": "npm run clean && npm run build && hexo deploy",
-    "server": "hexo server"
+    "deploy": "yarn run clean && yarn run build && hexo deploy",
+    "server": "hexo server",
+    "start": "yarn run build && yarn run server"
   },
   "hexo": {
     "version": "5.1.1"
