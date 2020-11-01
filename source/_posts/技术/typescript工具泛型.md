@@ -95,6 +95,14 @@ type MyType = typeof me // MyType = Person
 type MyNameType = typeof me.name // MyNameType = string
 ```
 
+### in
+遍历联合类型
+可以查看文章中的实现机制
+
+### - （横杠）
+逻辑取反，参考Required<T>
+对比文章中Partial<T>的Required<T>两个的代码，可以非常快速理解。
+
 ## 学习官方提供的工具泛型的实现方式
 
 在编写复杂的工具泛型前，我们必须要掌握基础工具及语法，才能更好的理解和实现。
