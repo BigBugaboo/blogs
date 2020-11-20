@@ -15,24 +15,25 @@ tags:
 ## 了解 Javascript AST 运转过程
 用个简单的例子
 ```javscript
-var AST = "I'm good boy";
+var AST = 'I am good boy';
 ```
 
 1. ### 词法分析
 这个过程也叫扫描(scanner)，将有利于开发者查看的字符流（char stream）转成便于处理的数据标记，记号流(token stream)
-这个过程会移除注释和空白付符，因为这些，对于代码运行无意义，只是为了提高可维护及美观。
+这个过程会移除注释和空白付符，因为这些，对于代码运行无意义，只是为了提高可维护性及美观。
 
-看到全大写的英文，理解起来比较费劲，为了方便理解加上了中文注释，可能中文语义不太契合，理解万岁。
 ```
-NAME "AST"          // 声明 "AST"
-EQUALS              // 赋值
-NAME "I'm good boy" // 声明 "I'm good boy"
-SEMICOLON           // 结束符，分号
+[
+  { type: 'Keyword', value: 'var' },
+  { type: 'Identifier', value: 'AST' },
+  { type: 'Punctuator', value: '=' },
+  { type: 'String', value: "'I am good boy'" }
+]
 ```
 
 2. ### 语法分析
 你可以理解成解析器，不同的标记，对应着不同的语法。语法分析，主要是将这些标记转换成对应语法的数据结构。
-同时也会对代码进行语法校验，有错误，会抛出。
+同时也会对代码进行语法校验，有错误的会抛出。
 通过语法分析转换后的ast，并不是百分百对于源码的，这语法分析过程中，会剔除一些不合法的东西，比如不完整的括号。
 如果你想获取百分百对应源码的树结构，可以去了解一下CST(具体语法树)，这里就不扩展讲了。
 [Ast 查看工具](https://astexplorer.net)
@@ -81,13 +82,16 @@ Program {                         // 根节点，表示整个代码块
 }
 ```
 
-总结：
-1. AST 把我们的代码用数据结构来表示，抽象化，特别符合它名字，抽象语法树。（树的结构，通过抽象出代码的通用结构）
-2. 抽象的后的代码，更利于我们去些事情。比如，代码风格检查（eslint）、语法高亮、错误提示、格式化代码（prettier）、主动补全、代码混淆压缩（打包优化相关）、改变代码结构(某些跨端框架原理)、兼容（polyfill）等
+### 总结
+1. AST 把我们的代码用数据结构来表示，抽象化，特别符合它名字，抽象语法树。（利用树的结构，表示抽象代码语法的通用结构,有利于二次转换）
+2. 抽象后的代码，更利于我们去做些事情。比如，代码风格检查、语法高亮、错误提示、格式化代码、主动补全、代码混淆压缩、改变代码结构(某些跨端框架原理)、兼容等
 
-### 利用工具实际练习
-首先，认识一些工具
-esprima: 可以将 js 代码转换成 `ast`
-estraverse: 遍历 `ast` ，可以执行一些替换、增加、删除等操作
-escodegen： 将 `ast` 转换成代码。
+#### 认识一些工具
+- esprima: ECMAScript parsing infrastructure for multipurpose analysis
+- estraverse: ECMAScript JS AST traversal functions
+- escodegen: ECMAScript code generator
+- recast: JavaScript syntax tree transformer, nondestructive pretty-printer, and automatic source map generator
+
+#### demo
+[练习项目](https://github.com/BigBugaboo/ast_demo)
 
