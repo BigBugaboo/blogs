@@ -11,7 +11,7 @@
     "start": "yarn run build && yarn run server"
   },
   "hexo": {
-    "version": "5.1.1"
+    "version": "5.2.0"
   },
   "dependencies": {
     "hexo": "^5.1.1",
