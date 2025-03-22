@@ -1,31 +1,32 @@
 {
-  "name": "hexo-site",
-  "version": "0.0.0",
+  "name": "nextjs-demo",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "hexo generate",
-    "clean": "hexo clean",
-    "dev": "hexo clean && hexo g && hexo s",
-    "deploy": "yarn run clean && yarn run build && hexo deploy",
-    "server": "hexo server",
-    "start": "yarn run build && yarn run server"
-  },
-  "hexo": {
-    "version": "5.2.0"
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
-    "hexo": "^5.1.1",
-    "hexo-autoprefixer": "^2.0.0",
-    "hexo-deployer-git": "^2.1.0",
-    "hexo-enhancer": "^1.0.7",
-    "hexo-filter-optimize": "^0.2.7",
-    "hexo-generator-archive": "^1.0.0",
-    "hexo-generator-category": "^1.0.0",
-    "hexo-generator-index": "^1.0.0",
-    "hexo-generator-tag": "^1.0.0",
-    "hexo-renderer-ejs": "^1.0.0",
-    "hexo-renderer-marked": "^2.0.0",
-    "hexo-renderer-stylus": "^1.1.0",
-    "hexo-server": "^1.0.0"
+    "next": "15.2.3",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "15.2.3",
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  },
+  "pnpm": {
+    "ignoredBuiltDependencies": [
+      "sharp"
+    ]
   }
 }
